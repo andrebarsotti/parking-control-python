@@ -4,11 +4,11 @@ Trata-se de uma api REST bem simples para o controle de entrada e saída de veí
 
 ## Solução
 
-## Contexto
+### Contexto
 
-## Containers
+### Containers
 
-## Componentes
+### Componentes
 
 ## Decisões arquiteturais
 
