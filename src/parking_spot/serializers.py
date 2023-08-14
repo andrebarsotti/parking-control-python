@@ -11,9 +11,6 @@ class ParkingSpotSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    snippets = serializers.HyperlinkedRelatedField(
-        many=True, view_name='parking-spot', read_only=True)
-
     class Meta:
         model = User
-        fields = ('url', 'id', 'username', 'snippets')
+        fields = ('id', 'username')
