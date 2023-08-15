@@ -50,25 +50,25 @@ python manage.py runserver
 
 3. No browser de sua preferência acessar a url <http://localhost:8000/swagger>, uma tela semelhante a abaixo deve ser apresentadada.
 
-    ![Tela do Swagger](/.assets/swagger.png "Tela do Swagger").
+    ![Tela do Swagger](/.assets/swagger.png "Tela do Swagger")
 
 4. Para as ações de consulta (GET) basta acessar a opção e selecionar a opção "Try it out"
 
-    ![Tela do Swagger com Try Out](/.assets/TryOut.png "Tela do Swagger com Try Out").
+    ![Tela do Swagger com Try Out](/.assets/TryOut.png "Tela do Swagger com Try Out")
 
 5. Para as ações de alteração (POST, PUT, PATCH e DELETE) é preciso autenticar. Execute os passos:
 
     5.1 Clique no bota Authorize
 
-    ![Tela do Swagger com Authorize](/.assets/Auth.png "Tela do Swagger com Authorize").
+    ![Tela do Swagger com Authorize](/.assets/Auth.png "Tela do Swagger com Authorize")
 
     5.2 Informe o usuário e senha gerado no passo 1 na tela abaixo apresentada e clique em close
 
-    ![Tela do Swagger com Login](/.assets/swagger-login.png "Tela do Swagger com Login").
+    ![Tela do Swagger com Login](/.assets/swagger-login.png "Tela do Swagger com Login")
 
     5.3 Clique na opção Try out do *endpoint* desejado.
 
-    ![Tela do Swagger com Try Out](/.assets/TryOut.png "Tela do Swagger com Try Out").
+    ![Tela do Swagger com Try Out](/.assets/TryOut.png "Tela do Swagger com Try Out")
 
 ### Execução no Docker
 
@@ -114,8 +114,6 @@ docker-compose down
 # Um volume foi criado para o banco de dados para excluí-lo utilizar o comando
 docker volume rm parking-control-python_data
 ```
-
-
 
 ## Referências
 
