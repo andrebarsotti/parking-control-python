@@ -55,6 +55,7 @@
 *.fs text=auto
 *.fsx text=auto
 *.hs text=auto
+*.py text=auto
 
 *.csproj text=auto
 *.vbproj text=auto
