@@ -33,7 +33,9 @@ A escolha do banco de dados foi o SQLLite3, e deu-se pelas seguintes razões:
 
 #### Execução
 
-1. No diretório **src** do projeto executar os comandos abaixo:
+1. Copiar o arquivo **.assets/.env** para o diretório **src**.
+
+2. No diretório **src** do projeto executar os comandos abaixo:
 
 ``` Shell
 # Aplicar os migrations
@@ -46,28 +48,27 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-2. No browser de sua preferência acessar a url <http://localhost:8000/swagger>, uma tela semelhante a abaixo deve ser apresentadada.
+3. No browser de sua preferência acessar a url <http://localhost:8000/swagger>, uma tela semelhante a abaixo deve ser apresentadada.
 
     ![Tela do Swagger](/.assets/swagger.png "Tela do Swagger").
 
-3. Para as ações de consulta (GET) basta acessar a opção e selecionar a opção "Try it out"
+4. Para as ações de consulta (GET) basta acessar a opção e selecionar a opção "Try it out"
 
     ![Tela do Swagger com Try Out](/.assets/TryOut.png "Tela do Swagger com Try Out").
 
-4. Para as ações de alteração (POST, PUT, PATCH e DELETE) é preciso autenticar. Execute os passos:
+5. Para as ações de alteração (POST, PUT, PATCH e DELETE) é preciso autenticar. Execute os passos:
 
-    4.1 Clique no bota Authorize
+    5.1 Clique no bota Authorize
 
     ![Tela do Swagger com Authorize](/.assets/Auth.png "Tela do Swagger com Authorize").
 
-    4.2 Informe o usuário e senha gerado no passo 1 na tela abaixo apresentada e clique em close
+    5.2 Informe o usuário e senha gerado no passo 1 na tela abaixo apresentada e clique em close
 
     ![Tela do Swagger com Login](/.assets/swagger-login.png "Tela do Swagger com Login").
 
-    4.3 Clique na opção Try out do *endpoint* desejado.
+    5.3 Clique na opção Try out do *endpoint* desejado.
 
     ![Tela do Swagger com Try Out](/.assets/TryOut.png "Tela do Swagger com Try Out").
-
 
 ### Execução no Docker
 
