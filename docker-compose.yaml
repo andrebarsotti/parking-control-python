@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  django:
+    image: parking-control:develop
+    build:
+      context: .
+    environment:
+      - DEBUG=true
+    ports:
+      - "8000:8000"
+    volumes:
+      - data:/app/data
+
+volumes:
+  data:

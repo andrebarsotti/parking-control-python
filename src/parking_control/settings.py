@@ -24,12 +24,12 @@ ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jdsgb*65z1b6deez!^h$d1pe)g5fo2&)dz92gq+9tn-g(2g3@f'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', True)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS','').split(",")
 
 # Application definition
 
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'parking_control.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'data/db.sqlite3',
     }
 }
 
@@ -111,9 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = os.getenv('LANGUAGE_CODE', 'en-us')
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = os.getenv('TIME_ZONE', 'UTC')
 
 USE_I18N = True
 
@@ -135,7 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # APPEND_SLASH=False
 
 REST_FRAMEWORK = {
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': os.getenv('REST_FRAMEWORK_PAGE_SIZE', 10),
     'DEFAULT_PAGINATION_CLASS':
     'rest_framework.pagination.PageNumberPagination',
 }
@@ -144,14 +144,16 @@ SWAGGER_SETTINGS = {
    'USE_SESSION_AUTH': False
 }
 
-if ENVIRONMENT == 'production':
-    DEBUG = False
-    SECRET_KEY = os.getenv('SECRET_KEY')
-    # SESSION_COOKIE_SECURE = True
-    # SECURE_BROWSER_XSS_FILTER = True
-    # SECURE_CONTENT_TYPE_NOSNIFF = True
-    # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    # SECURE_HSTS_SECONDS = 31536000
-    # SECURE_REDIRECT_EXEMPT = []
-    # SECURE_SSL_REDIRECT = True
-    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+##
+## Configuration variables for development and production environments
+##
+SESSION_COOKIE_SECURE = os.getenv('SESSION_COOKIE_SECURE', False)
+SECURE_BROWSER_XSS_FILTER = os.getenv('SECURE_BROWSER_XSS_FILTER', False)
+SECURE_CONTENT_TYPE_NOSNIFF = os.getenv('SECURE_CONTENT_TYPE_NOSNIFF', False)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = os.getenv('SECURE_HSTS_INCLUDE_SUBDOMAINS', False)
+SECURE_HSTS_SECONDS = os.getenv('SECURE_HSTS_SECONDS', 31536000)
+SECURE_REDIRECT_EXEMPT = os.environ.get('SECURE_REDIRECT_EXEMPT','').split(",")
+SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', False)
+
+if os.getenv("BEHIND_PROXY", False):
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

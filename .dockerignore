@@ -160,7 +160,13 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
-!.assets/**/*
-.assets/**/*.drawio:Zone.Identifier
-
-src/data
+#Especificos Docker
+.assets
+**/data/**/*
+**/__pycache__
+**/.env
+.git*
+LICENSE
+README.md
+Dockerfile
+.dockerignore
