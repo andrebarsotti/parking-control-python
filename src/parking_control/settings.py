@@ -126,6 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "static"
+
+if ENVIRONMENT != 'production':
+    print(f"STATIC_ROOT: {STATIC_ROOT}")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -154,6 +158,19 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = os.getenv('SECURE_HSTS_INCLUDE_SUBDOMAINS', Fal
 SECURE_HSTS_SECONDS = os.getenv('SECURE_HSTS_SECONDS', 31536000)
 SECURE_REDIRECT_EXEMPT = os.environ.get('SECURE_REDIRECT_EXEMPT','').split(",")
 SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', False)
+BEHIND_PROXY = os.getenv('BEHIND_PROXY', False)
 
-if os.getenv("BEHIND_PROXY", False):
+if ENVIRONMENT != 'production':
+    print(f"SESSION_COOKIE_SECURE: {SESSION_COOKIE_SECURE}")
+    print(f"SECURE_BROWSER_XSS_FILTER: {SECURE_BROWSER_XSS_FILTER}")
+    print(f"SECURE_CONTENT_TYPE_NOSNIFF: {SECURE_CONTENT_TYPE_NOSNIFF}")
+    print(f"SECURE_HSTS_INCLUDE_SUBDOMAINS: {SECURE_HSTS_INCLUDE_SUBDOMAINS}")
+    print(f"SECURE_HSTS_SECONDS: {SECURE_HSTS_SECONDS}")
+    print(f"SECURE_REDIRECT_EXEMPT: {SECURE_REDIRECT_EXEMPT}")
+    print(f"SECURE_SSL_REDIRECT: {SECURE_SSL_REDIRECT}")
+    print(f"BEHIND_PROXY: {BEHIND_PROXY}")
+
+if BEHIND_PROXY:
+    if ENVIRONMENT != 'production':
+        print("BEHIND PROXY set to True")
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
