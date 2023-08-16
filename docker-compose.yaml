@@ -10,6 +10,7 @@ services:
       - SECRET_KEY=l889thd#01*f$$zs14xhpx#^s^!cfz9i08m@ub^^oa62%_cjs85
       - DEBUG=false
       - ALLOWED_HOSTS=*
+      - USE_GUNICORN=true
     volumes:
       - data:/app/data
       - static_files:/app/static

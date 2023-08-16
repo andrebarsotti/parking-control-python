@@ -28,5 +28,6 @@ ENV BEHIND_PROXY=false
 ENV SUPER_USER_NAME=admin
 ENV SUPER_USER_PASSWORD=password123
 ENV SUPER_USER_EMAIL="admin@example.com"
+ENV USE_GUNICORN=false
 
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
