@@ -38,6 +38,9 @@ A escolha do banco de dados foi o SQLLite3, e deu-se pelas seguintes razões:
 2. No diretório **src** do projeto executar os comandos abaixo:
 
 ``` Shell
+# Cria o diretório data
+mkdir data
+
 # Aplicar os migrations
 python manage.py migrate
 
