@@ -87,7 +87,7 @@ python manage.py runserver
 docker-compose up -d --build
 ```
 
-2. No browser de sua preferência acessar a url <http://localhost:8000/swagger>, uma tela semelhante a abaixo deve ser apresentadada.
+2. No browser de sua preferência acessar a url <https://localhost:8000/swagger>, uma tela semelhante a abaixo deve ser apresentadada.
 
     ![Tela do Swagger](/.assets/swagger.png "Tela do Swagger").
 

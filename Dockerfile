@@ -3,8 +3,8 @@ FROM python:3.10.12-alpine
 COPY src /app
 WORKDIR /app
 
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN mkdir static
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY scripts/entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
@@ -28,5 +28,6 @@ ENV BEHIND_PROXY=false
 ENV SUPER_USER_NAME=admin
 ENV SUPER_USER_PASSWORD=password123
 ENV SUPER_USER_EMAIL="admin@example.com"
+ENV USE_GUNICORN=false
 
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
