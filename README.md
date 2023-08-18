@@ -14,9 +14,9 @@ Para o desenvolvimento desse projeto foi escolhido o framework Python Django Res
 4. *Multiplataforma*: por ser desenvolvido em python permite a execução tanto em ambiente Windows quanto Linux.
 5. *Segurança*: o Django já possui uma ferramente para gestão de usuários e autenticação.
 
-### Banco de dados SQLLite
+### Banco de dados SQLite
 
-A escolha do banco de dados foi o SQLLite3, e deu-se pelas seguintes razões:
+A escolha do banco de dados foi o SQLite3, e deu-se pelas seguintes razões:
 
 1. *Autocontido*: trata-se de um banco de dados auto contido, sem a necessidade de um servidor, reduzindo assim a dependência externa e simplificando a configuração da aplicação.
 2. *Portabilidade*: os daddos são salvos em um único arquivo o que permite salvá-lo em um *data lake* ou *file share* com facilidde em um ambiente de nuvem ou *on-premisse*.
