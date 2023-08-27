@@ -9,8 +9,8 @@ on:
 env:
   REGISTRY: localhost:8300
   IMAGE_NAME: ${{ github.repository }} 
-  REGISTRY_USER: ${{ github.actor }}
-  REGISTRY_PWD: ${{ secrets.GITHUB_TOKEN }}
+  REGISTRY_USER: andre
+  REGISTRY_PWD: ${{ secrets.TOKEN }}
 
 jobs:
   build-and-publish:
